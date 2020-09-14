@@ -1,0 +1,162 @@
+.story-intro {
+    position: relative;
+}
+
+.story-intro img {
+    width: 70%;
+}
+
+.story-intro-text {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    font-size: 10em;
+    color: darkred;
+}
+
+.rickross-bg {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.story-year {
+    position: absolute;
+    bottom: 0;
+    font-size: 8rem;
+    color: hsla(0, 100%, 100%, 0.6);
+    z-index: 1;
+}
+
+.story-year--right {
+    right: 0;
+}
+
+.story-year--left {
+    left: 10%;
+}
+
+.rickross-bg img {
+    width: 65%;
+    padding: 4em;
+}
+
+.rickross-bg2018 {
+    background-image: url('/imgs/rickross-bg2018.jpg');
+}
+
+.rickross-bg2013 {
+    background-image: url('/imgs/rickross-bg2013.jpg');
+}
+
+.rickross-bg2009 {
+    background-image: url('/imgs/rickross-bg2009.png');
+}
+
+.rickross-bg2005 {
+    background-image: url('/imgs/rickross-bg2005.jpg');
+}
+
+.rickross-bg2002 {
+    background-image: url('/imgs/rickross-bg2002.png');
+}
+
+.rick-ross-text {
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 1rem 4rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rick-ross-text--right {
+    right: 10%;
+    left: 60%;
+}
+
+.rick-ross-text--left {
+    left: 10%;
+    right: 60%;
+}
+
+.rick-ross-img-right {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+@media (max-width: 1400px) {
+    .story-year {
+        font-size: 4em;
+    }
+
+    .story-year--left {
+        left: 0;
+    }
+
+    .rick-ross-text {
+        position: absolute;
+        top: 50%;
+        width: 80%;
+        height: 45%;
+    }
+
+    .rick-ross-text--right {
+        right: 0;
+        left: 20%;
+    }
+
+    .rick-ross-text--left {
+        left: 0;
+        right: 20%;
+    }
+}
+
+@media (max-width: 1025px) and (min-width: 601px) {
+    .story-intro-text {
+        font-size: 4em;
+    }
+
+    .rick-ross-text {
+        top: 40%;
+        height: 60%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .story-year {
+        font-size: 2em;
+    }
+
+    .story-intro-text {
+        font-size: 2em;
+    }
+
+    .rickross-bg img {
+        width: 100%;
+        padding: 0;
+    }
+
+    .rick-ross-text {
+        position: static;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .rick-ross-img-right {
+        position: static;
+    }
+
+}

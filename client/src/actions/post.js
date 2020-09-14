@@ -1,0 +1,219 @@
+import axios from 'axios';
+import { setAlert } from './alert';
+import {
+	GET_POSTS,
+	POST_ERROR,
+	UPDATE_LIKES,
+	DELETE_POST,
+	ADD_POST,
+	EDIT_POST,
+	GET_POST,
+	GET_COMMENTS,
+	ADD_COMMENT,
+	EDIT_COMMENT,
+	DELETE_COMMENT
+} from './types';
+
+//  load all posts
+export const getPosts = () => async (dispatch) => {
+	try {
+		const res = await axios.get('/hustlin/posts');
+		dispatch({
+			type: GET_POSTS,
+			payload: res.data
+		});
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  add post
+export const addPost = (formData) => async (dispatch) => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+
+	try {
+		const res = await axios.post('/hustlin/posts', formData, config);
+		dispatch({
+			type: ADD_POST,
+			payload: res.data
+		});
+		dispatch(setAlert('Post Created', 'success'));
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  get post by id
+export const getPost = (id) => async (dispatch) => {
+	try {
+		const res = await axios.get(`/hustlin/posts/${id}`);
+		dispatch({
+			type: GET_POST,
+			payload: res.data
+		});
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  edit post
+export const editPost = (id, formData) => async (dispatch) => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+	try {
+		const res = await axios.patch(`/hustlin/posts/${id}`, formData, config);
+
+		dispatch({
+			type: EDIT_POST,
+			payload: res.data
+		});
+		dispatch(setAlert('Post Updated', 'success'));
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//delete post by id
+export const deletePost = (id) => async (dispatch) => {
+	try {
+		await axios.delete(`/hustlin/posts/${id}`);
+		dispatch({
+			type: DELETE_POST,
+			payload: id
+		});
+		dispatch(setAlert('Post Removed', 'success'));
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  add like to a post
+export const addLike = (id) => async (dispatch) => {
+	try {
+		const res = await axios.put(`/hustlin/posts/like/${id}`);
+		dispatch({
+			type: UPDATE_LIKES,
+			payload: { id, likes: res.data }
+		});
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  remove like to a post
+export const removeLike = (id) => async (dispatch) => {
+	try {
+		const res = await axios.put(`/hustlin/posts/unlike/${id}`);
+		dispatch({
+			type: UPDATE_LIKES,
+			payload: { id, likes: res.data }
+		});
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  get all comments
+export const getComments = (postId) => async (dispatch) => {
+	try {
+		const res = await axios.get(`/hustlin/posts/comment/${postId}`);
+		dispatch({
+			type: GET_COMMENTS,
+			payload: res.data
+		});
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  add comment
+export const addComment = (postId, formData) => async (dispatch) => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+	try {
+		const res = await axios.post(`/hustlin/posts/comment/${postId}`, formData, config);
+		dispatch({
+			type: ADD_COMMENT,
+			payload: res.data
+		});
+		dispatch(setAlert('Comment Added', 'success'));
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  edit comment
+export const editComment = (postId, commentId, formData) => async (dispatch) => {
+	const config = {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	};
+	try {
+		const res = await axios.patch(`/hustlin/posts/comment/${postId}/${commentId}`, formData, config);
+		dispatch({
+			type: EDIT_COMMENT,
+			payload: res.data
+		});
+		dispatch(setAlert('Comment Updated', 'success'));
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};
+
+//  delete comment
+export const deleteComment = (postId, commentId) => async (dispatch) => {
+	try {
+		await axios.delete(`/hustlin/posts/comment/${postId}/${commentId}`);
+		dispatch({
+			type: DELETE_COMMENT,
+			payload: commentId
+		});
+		dispatch(setAlert('Comment Removed', 'success'));
+	} catch (error) {
+		dispatch({
+			type: POST_ERROR,
+			payload: { msg: error.response.statusText, status: error.response.status }
+		});
+	}
+};

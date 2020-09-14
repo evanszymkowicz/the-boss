@@ -8,10 +8,10 @@ const ProfileSchema = new mongoose.Schema({
 	location: {
 		type: String
 	},
-	favmarsalbum: {
+	favrickrossalbum: {
 		type: String
 	},
-	favmarssong: {
+	favrickrosssong: {
 		type: String
 	},
 	date: {

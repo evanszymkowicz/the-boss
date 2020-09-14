@@ -21,12 +21,12 @@ router.get('/me', auth, async (req, res) => {
 //  create or update the profile
 //  private
 router.post('/', auth, async (req, res) => {
-	const { location, favmarsalbum, favmarssong } = req.body;
+	const { location, favrickrossalbum, favrickrosssong } = req.body;
 	const profileFields = {};
 	profileFields.user = req.user.id;
 	if (location) profileFields.location = location;
-	if (favmarsalbum) profileFields.favmarsalbum = favmarsalbum;
-	if (favmarssong) profileFields.favmarssong = favmarssong;
+	if (favrickrossalbum) profileFields.favrickrossalbum = favrickrossalbum;
+	if (favrickrosssong) profileFields.favrickrosssong = favrickrosssong;
 	try {
 		let profile = await Profile.findOneAndUpdate(
 			{ user: req.user.id },

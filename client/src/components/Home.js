@@ -8,11 +8,11 @@ export default function Home() {
                 <video 
                 className="home__video"
                 width="70%" height="auto" controls muted loop autoPlay playsInline >
-                    <source src="/imgs/mars-concert.webm" type="video/webm" />
+                    <source src="/imgs/rickross-musicvideo.gif" type="gif" />
                     Your browser doesn't support the video tag.
                 </video>
                 <div className="home__video-text">
-                    <p >Join us this summer.</p>
+                    <p >Join us this spring.</p>
                     <div className="arrow">
                         <span></span>
                         <span></span>
@@ -23,41 +23,34 @@ export default function Home() {
                 
             <section className="tour">
                 <div className="tour__item">
-                    <img src="/imgs/london.jpg" alt="tour london"/>
+                    <img src="/imgs/washington.jpg" alt="tour washington, d.c."/>
                     <div className="tour__text">
-                        <p>The O2, London</p>
-                        <p>July 15</p>
+                        <p>Capital One Arena, Washington, D.C.</p>
+                        <p>April 9</p>
                     </div>
                 </div>
                 <div className="tour__item">
-                    <img src="/imgs/stockholm.jpg" alt="tour stockholm"/>
+                    <img src="/imgs/miami.jpg" alt="tour miami"/>
                     <div className="tour__text">
-                        <p>Gröna Lund, Stockholm</p>
-                        <p>July 17</p>
+                        <p>Hard Rock Stadium, Miami</p>
+                        <p>Feburary 12</p>
                     </div>
                 </div>
                 <div className="tour__item">
-                    <img src="/imgs/berlin.jpg" alt="tour berlin"/>
+                    <img src="/imgs/greensboro.jpg" alt="tour greensboro"/>
                     <div className="tour__text">
-                        <p>Mercedes-Benz Arena, Berlin</p>
-                        <p>July 19</p>
+                        <p>Greensboro Coliseum Complex, Greensboro</p>
+                        <p>April 2</p>
                     </div>
                 </div>
                 <div className="tour__item">
-                    <img src="/imgs/paris.jpg" alt="tour paris"/>
+                    <img src="/imgs/canalside.jpg" alt="tour canalside"/>
                     <div className="tour__text">
-                        <p>Le Grand Rex, Paris</p>
-                        <p>July 21</p>
+                        <p>Canalside, Buffalo</p>
+                        <p>August 07</p>
                     </div>
                 </div>
-                <div className="tour__item">
-                    <img src="/imgs/barcelona.jpg" alt="tour barcelona"/>
-                    <div className="tour__text">
-                        <p>Gran Teatre del Liceu, Barcelona</p>
-                        <p>July 25</p>
-                    </div>
-                </div>
-                <div className="tour__item">
+                
                     <img src="/imgs/rome.jpg" alt="tour rome"/>
                     <div className="tour__text">
                         <p>Na Cosetta Estiva, Rome</p>
