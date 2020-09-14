@@ -40,8 +40,8 @@ router.post('/', auth, async (req, res) => {
 	}
 });
 
-//  note: get all profiles
-//  access: public
+//	get all profiles
+//  public
 router.get('/', async (req, res) => {
 	try {
 		const profiles = await Profile.find().populate('user', [ 'name', 'avatar' ]);
@@ -53,7 +53,7 @@ router.get('/', async (req, res) => {
 });
 
 //  get profile by id
-//  access: public
+//  public
 router.get('/user/:user_id', async (req, res) => {
 	try {
 		const profile = await Profile.findOne({ user: req.params.user_id }).populate('user', [ 'name', 'avatar' ]);
@@ -71,7 +71,7 @@ router.get('/user/:user_id', async (req, res) => {
 });
 
 //  delete the profile
-//  access: private
+//  private
 router.delete('/me', auth, async (req, res) => {
 	try {
 		await Post.deleteMany({ user: req.user.id });

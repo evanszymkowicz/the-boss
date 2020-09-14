@@ -30,9 +30,8 @@ router.post('/', auth, [ check('text', 'Text is required').not().isEmpty() ], as
 	}
 });
 
-//route: GET echelon/posts
-//note: get all posts
-//access: public
+//	GET hustlin/posts
+//	public
 router.get('/', async (req, res) => {
 	try {
 		const posts = await Post.find().sort({ date: -1 });
@@ -43,9 +42,8 @@ router.get('/', async (req, res) => {
 	}
 });
 
-//route: GET echelon/posts/:id
-//note: get post by id
-//access: public
+//	GET hustlin/posts/:id
+//	public
 router.get('/:id', async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id);
@@ -62,9 +60,8 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
-//route: PATCH echelon/posts/:id
-//note: edit post by id
-//access: private
+//	PATCH hustlin/posts/:id
+//	private
 router.patch('/:id', auth, [ check('text', 'Text is required.').not().isEmpty() ], async (req, res) => {
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
@@ -93,9 +90,8 @@ router.patch('/:id', auth, [ check('text', 'Text is required.').not().isEmpty() 
 	}
 });
 
-//route: DELETE echelon/posts/:id
-//route: delete a post by id
-//access: private
+//	DELETE hustlin/posts/:id
+//	private
 router.delete('/:id', auth, async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id);
@@ -118,9 +114,8 @@ router.delete('/:id', auth, async (req, res) => {
 	}
 });
 
-//route: PUT echelon/posts/like/:id
-//note: like a post
-//access: private
+//	PUT hustlin/posts/like/:id
+//	private
 router.put('/like/:id', auth, async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id);
@@ -138,9 +133,8 @@ router.put('/like/:id', auth, async (req, res) => {
 	}
 });
 
-//route: PUT echelon/posts/unlike/:id
-//route: unlike a post
-//access: private
+//	PUT hustlin/posts/unlike/:id
+//	private
 router.put('/unlike/:id', auth, async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id);
@@ -159,9 +153,8 @@ router.put('/unlike/:id', auth, async (req, res) => {
 	}
 });
 
-//route POST echelon/posts/comment/:id
-//note: post a comment to a post
-//access: private
+//	POST hustlin/posts/comment/:id
+//	private
 router.post('/comment/:id', auth, [ check('text', 'Text is required.').not().isEmpty() ], async (req, res) => {
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
@@ -187,9 +180,8 @@ router.post('/comment/:id', auth, [ check('text', 'Text is required.').not().isE
 	}
 });
 
-//route: PATCH echelon/posts/comment/:id/:comment_id
-//note: edit a comment
-//access: private
+//	PATCH hustlin/posts/comment/:id/:comment_id
+//	private
 router.patch(
 	'/comment/:id/:comment_id',
 	auth,

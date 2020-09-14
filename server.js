@@ -11,10 +11,10 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 //routes
-app.use('/echelon/auth', require('./routes/echelon/auth'));
-app.use('/echelon/users', require('./routes/echelon/users'));
-app.use('/echelon/profile', require('./routes/echelon/profile'));
-app.use('/echelon/posts', require('./routes/echelon/posts'));
+app.use('/hustlin/auth', require('./routes/hustlin/auth'));
+app.use('/hustlin/users', require('./routes/hustlin/users'));
+app.use('/hustlin/profile', require('./routes/hustlin/profile'));
+app.use('/hustlin/posts', require('./routes/hustlin/posts'));
 app.use('/store', require('./routes/product'));
 
 //serve static assets in production
