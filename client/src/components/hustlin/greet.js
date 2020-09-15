@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
-import Profile from './Profile';
-import News from './News';
+import Profile from './profile';
+import News from './news';
 import { getCurrentProfile } from '../../actions/profile';
 
 const Greetings = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {

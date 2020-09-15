@@ -4,8 +4,14 @@
     top: 10%;
     left: 10%;
     width: 30%;
-    color: darkred;
+    color: rgb(165, 29, 199);
     z-index: 1;
+}
+
+.home__landing {
+    background-image: url('/imgs/mastermind.png');
+    background-repeat: no-repeat;
+
 }
 
 .home__video {
@@ -22,6 +28,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.subtitle {
+    position: absolute;
+    /* top: 80px; */
+    right: 80px;
+    /* width: 200px; */
+    /* height: 100px; */
 }
 
 .arrow span {
@@ -61,7 +75,7 @@
 
 .tour {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2em;
     margin-bottom: 5em;
 }
@@ -73,7 +87,7 @@
 
 .tour__text {
     position: absolute;
-    font-family: 'ETHLarge-ExpandedBlack', Arial, Helvetica, sans-serif;
+    font-family: 'Arapey', serif;
     font-size: 2em;
     top: 50%;
     left: 50%;
@@ -82,7 +96,7 @@
     width: 400px;
     height: 300px;
     color: white;
-    background-color: hsla(0, 100%, 27%, 0.7)
+    background-color: rgb(165, 29, 199)
 }
 
 @media (max-width: 1800px) {

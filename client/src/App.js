@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
+import Nav from './components/layout/Nav';
 import NotFound from './components/layout/NotFound';
-import Home from './components/Home';
+import Home from './components/home';
 import Story from './components/Story';
-import Shop from './components/Shop';
-import Routes from './components/routing/Routes';
+import Shop from './components/shop';
+import Routes from './components/routes/routes';
 import Footer from './components/layout/Footer';
 import './css/app.css';
 //redux
@@ -27,7 +27,7 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<Router>
-				<Navbar />
+				<Nav />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/story" component={Story} />

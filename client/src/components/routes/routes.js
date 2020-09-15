@@ -4,12 +4,12 @@ import { Route, Switch } from 'react-router-dom';
 import Register from '../auth/Register';
 import Login from '../auth/Login';
 import hustlin from '../hustlin/hustlin';
-import CreateProfile from '../hustlin/CreateProfile';
-import EditProfile from '../hustlin/EditProfile';
-import AllProfiles from '../hustlin/AllProfiles';
-import Discussion from '../hustlin/Discussion';
-import Post from '../hustlin/Post';
-import PrivateRoute from '../routing/PrivateRoute';
+import CreateProfile from '../hustlin/createprofile';
+import EditProfile from '../hustlin/editprofile';
+import AllProfiles from '../hustlin/profile';
+import Discussion from '../hustlin/messageboard';
+import Post from '../hustlin/post';
+import PrivateRoute from '../routes/privateroute';
 import NotFound from '../layout/NotFound';
 
 const Routes = () => {

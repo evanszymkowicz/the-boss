@@ -2,7 +2,7 @@ import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
-import SingleProduct from './SingleProduct';
+import SingleProduct from './singleproduct';
 import { getProducts } from '../../actions/products';
 import { addToCart } from '../../actions/cart';
 

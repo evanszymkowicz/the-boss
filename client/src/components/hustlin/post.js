@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
 import Alert from '../layout/Alert';
-import Dashboard from './Dashboard';
-import PostItem from '../hustlin/PostItem';
-import CommentForm from './CommentForm';
-import CommentItem from './CommentItem';
+import Dashboard from './dashboard';
+import PostItem from '../hustlin/postitem';
+import CommentForm from './commentform';
+import CommentItem from './commentitem';
 import { getPost } from '../../actions/post';
 
 const Post = ({ getPost, post: { post, loading }, match }) => {

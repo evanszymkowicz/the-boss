@@ -1,13 +1,13 @@
 @import-normalize;
 
 @import './fonts.css';
-@import './navbar.css';
+@import './nav.css';
 @import './home.css';
 @import './story.css';
 @import './shop.css';
 @import './register.css';
 @import './dashboard.css';
-@import './greetings.css';
+@import './greeting.css';
 @import './profile.css';
 @import './post.css';
 
@@ -17,8 +17,7 @@
 }
 
 html {
-    font-family: 'Lato',
-        sans-serif;
+    font-family: 'Arapey', serif;
     font-size: 18px;
     max-width: 1800px;
     margin: 0 auto;
@@ -30,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Arapey', serif;
 }
 
 p {
