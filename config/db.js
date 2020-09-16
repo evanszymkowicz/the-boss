@@ -8,7 +8,7 @@ const connectDB = async () => {
 			useNewUrlParser: true,
 			useCreateIndex: true,
 			useFindandModify: false,
-			dbName: 'the-boss'
+			dbName: 'the_boss'
 		});
 		console.log('MongoDB is connected.');
 	} catch (error) {
