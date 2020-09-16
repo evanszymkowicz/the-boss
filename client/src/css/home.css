@@ -9,8 +9,11 @@
 }
 
 .home__landing {
-    background-image: url('/imgs/mastermind.png');
+    min-height: 100%;
+    background: url('/imgs/homepage-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
 
 }
 
@@ -32,10 +35,11 @@
 
 .subtitle {
     position: absolute;
-    /* top: 80px; */
-    right: 80px;
-    /* width: 200px; */
-    /* height: 100px; */
+    color: darkred;
+    top: 10px;
+    left: 80px;
+    width: 200px;
+    height: 100px;
 }
 
 .arrow span {
@@ -96,7 +100,7 @@
     width: 400px;
     height: 300px;
     color: white;
-    background-color: rgb(165, 29, 199)
+    background-color: hsla(0, 50%, 50%, 0.5);
 }
 
 @media (max-width: 1800px) {
@@ -121,7 +125,7 @@
     }
 
     .tour {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .tour__text {

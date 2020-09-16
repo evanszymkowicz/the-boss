@@ -45,25 +45,27 @@
     padding: 4em;
 }
 
-.rickross-bg2018 {
-    background-image: url('/imgs/live-southafrica.jpeg');
-}
-
-.rickross-bg2013 {
-    background-image: url('/imgs/hood-billonaire.jpeg');
-}
-
-.rickross-bg2014 {
-    background-image: url('/imgs/live-the-boss.jpeg');
+.rickross-bg2006 {
+    background-image: url('/imgs/live-southafrica.jpg');
 }
 
 .rickross-bg2010 {
-    background-image: url('/imgs/mastermind.png');
+    background-image: url('/imgs/wallpaper-1.jpg');
 }
 
-.rickross-bg2006 {
-    background-image: url('/imgs/teflon-don.jpeg');
+.rickross-bg2013 {
+    background-image: url('/imgs/wallpaper-2.jpg');
 }
+
+.rickross-bg2014 {
+    background-image: url('/imgs/wallpaper-3.jpg');
+}
+
+.rickross-bg2018 {
+    background-image: url('/imgs/wallpaper-4.jpg');
+}
+
+
 
 .rick-ross-text {
     color: white;
