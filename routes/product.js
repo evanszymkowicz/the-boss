@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const config = require('config');
 const Product = require('../models/Product');
-const stripeSecretKey = config.get('STRIPE_SECRET_KEY');
-const stripe = require('stripe')(stripeSecretKey);
+// const stripeSecretKey = config.get('');
+// const stripe = require('stripe')(stripeSecretKey);
 
 router.get('/', async (req, res) => {
 	try {

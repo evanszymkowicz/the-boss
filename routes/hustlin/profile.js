@@ -5,6 +5,7 @@ const User = require('../../models/User');
 const Profile = require('../../models/Profile');
 const Post = require('../../models/Post');
 
+// private access
 router.get('/me', auth, async (req, res) => {
 	try {
 		const profile = await Profile.findOne({ user: req.user.id }).populate('user', [ 'name', 'avatar' ]);
@@ -19,7 +20,7 @@ router.get('/me', auth, async (req, res) => {
 });
 
 //  create or update the profile
-//  private
+//  still private access
 router.post('/', auth, async (req, res) => {
 	const { location, favrickrossalbum, favrickrosssong } = req.body;
 	const profileFields = {};
