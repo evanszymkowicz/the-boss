@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+//	layout
 import Loader from '../layout/Loader';
 import Alert from '../layout/Alert';
 
@@ -27,16 +28,16 @@ const Profile = ({ profile: { profile, loading }, auth }) => {
 										<span className="profile__info--tag">Location</span>: {profile.location}
 									</p>
 									<p>
-										<span className="profile__info--tag">Favorite album</span>:{' '}
+										<span className="profile__info--tag">Favorite Album</span>:{' '}
 										{profile.favrickrossalbum}
 									</p>
 									<p>
-										<span className="profile__info--tag">Favorite song</span>:{' '}
+										<span className="profile__info--tag">Favorite Song</span>:{' '}
 										{profile.favrickrosssong}
 									</p>
 								</div>
 								<div className="profile__button">
-									<Link to="/hustlin/edit-profile" className="btn">
+									<Link to="/maybach/edit-profile" className="btn">
 										Edit Profile
 									</Link>
 								</div>

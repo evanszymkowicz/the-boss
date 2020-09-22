@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
+//	authorization
 const auth = require('../../middleware/auth');
+//	database schema
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
 const Post = require('../../models/Post');
@@ -79,7 +81,7 @@ router.delete('/me', auth, async (req, res) => {
 		//remove profile and user
 		await Profile.findOneAndRemove({ user: req.user.id });
 		await User.findOneAndRemove({ _id: req.user.id });
-		res.json({ msg: 'User deleted.' });
+		res.json({ msg: 'User Deleted!' });
 	} catch (error) {
 		console.error(error.message);
 		res.status(500).send('server error');

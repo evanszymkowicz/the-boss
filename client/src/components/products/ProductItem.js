@@ -1,13 +1,13 @@
 import React from 'react';
 
-const SingleProduct = ({ addToCart, product: { _id, name, price, imgName } }) => {
+const ProductItem = ({ addToCart, product: { _id, name, price, imgName } }) => {
 	return (
 		<div>
 			<div key={_id} className="product-item">
 				<img src={`imgs/${imgName}`} alt={name} />
 				<div className="product-item__meta">
 					<button className="btn" onClick={() => addToCart({ _id, name, price, imgName })}>
-						BUY
+						Purchase
 					</button>
 					<div className="product-item__price">${price}</div>
 				</div>
@@ -16,4 +16,4 @@ const SingleProduct = ({ addToCart, product: { _id, name, price, imgName } }) =>
 	);
 };
 
-export default SingleProduct;
+export default ProductItem;

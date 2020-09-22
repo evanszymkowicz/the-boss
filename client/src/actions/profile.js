@@ -5,7 +5,7 @@ import { GET_PROFILE, GET_PROFILES, PROFILE_ERROR, EDIT_PROFILE, ACCOUNT_DELETED
 //  get  user profile
 export const getCurrentProfile = () => async (dispatch) => {
 	try {
-		const res = await axios.get('/hustlin/profile/me');
+		const res = await axios.get('/maybach/profile/me');
 		dispatch({
 			type: GET_PROFILE,
 			payload: res.data
@@ -22,7 +22,7 @@ export const getCurrentProfile = () => async (dispatch) => {
 export const getProfiles = () => async (dispatch) => {
 	dispatch({ type: CLEAR_PROFILE });
 	try {
-		const res = await axios.get('/hustlin/profile');
+		const res = await axios.get('/maybach/profile');
 		dispatch({
 			type: GET_PROFILES,
 			payload: res.data
@@ -38,7 +38,7 @@ export const getProfiles = () => async (dispatch) => {
 //  get profile by ID
 export const getProfileById = (userId) => async (dispatch) => {
 	try {
-		const res = await axios.get(`/hustlin/profile/user/${userId}`);
+		const res = await axios.get(`/maybach/profile/user/${userId}`);
 		dispatch({
 			type: GET_PROFILE,
 			payload: res.data
@@ -59,7 +59,7 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
 				'Content-Type': 'application/json'
 			}
 		};
-		const res = await axios.post('/hustlin/profile', formData, config);
+		const res = await axios.post('/maybach/profile', formData, config);
 
 		dispatch({
 			type: EDIT_PROFILE,
@@ -68,7 +68,7 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
 		dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
 		if (!edit) {
-			history.push('/hustlin');
+			history.push('/maybach');
 		}
 	} catch (error) {
 		const errors = error.response.data.errors;
@@ -86,7 +86,7 @@ export const createProfile = (formData, history, edit = false) => async (dispatc
 export const deleteAccount = () => async (dispatch) => {
 	if (window.confirm('Are you sure? This can NOT be undone!')) {
 		try {
-			await axios.delete('/hustlin/profile/me');
+			await axios.delete('/maybach/profile/me');
 			dispatch({ type: CLEAR_PROFILE });
 			dispatch({ type: ACCOUNT_DELETED });
 			dispatch(setAlert('Your account has been deleted.'));

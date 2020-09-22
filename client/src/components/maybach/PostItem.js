@@ -2,7 +2,9 @@ import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+//	import to own the libs
 import Moment from 'react-moment';
+//	actions
 import { addLike, removeLike, editPost, deletePost } from '../../actions/post';
 
 const PostItem = ({
@@ -70,7 +72,7 @@ const PostItem = ({
 				)}
 				<div className="post-item__meta">
 					<p className="post-item__meta-item">
-						<Moment format="YYYY/MM/DD">{date}</Moment>
+						<Moment format="MM/DD/YYYY">{date}</Moment>
 					</p>
 					{showActions && (
 						<Fragment>
@@ -86,7 +88,7 @@ const PostItem = ({
 								</span>
 							</button>
 
-							<Link to={`/hustlin/posts/${_id}`} className="post-item__meta-item">
+							<Link to={`/maybach/posts/${_id}`} className="post-item__meta-item">
 								View {comments.length > 0 && (
 									<span className="comment-count">{comments.length}</span>
 								)}{' '}

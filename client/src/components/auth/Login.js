@@ -2,9 +2,10 @@ import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '../../actions/auth';
+//	layout
 import Alert from '../layout/Alert';
-
+//	actions
+import { login } from '../../actions/auth';
 const Login = ({ login, isAuthenticated }) => {
 	const [ formData, setFormData ] = useState({
 		email: '',
@@ -22,20 +23,20 @@ const Login = ({ login, isAuthenticated }) => {
 
 	//redirect if logged in
 	if (isAuthenticated) {
-		return <Redirect to="/hustlin" />;
+		return <Redirect to="/maybach" />;
 	}
 
 	return (
 		<Fragment>
 			<Alert />
-			<section className="hustlin-register">
-				<h1 className="hustlin-login__title">Welcome hustlers!</h1>
+			<section className="maybach-register">
+				<h1 className="maybach-login__title">Welcome hustlers!</h1>
 				<div className="testaccount">
-					<p>TEST ACCOUNT: test@hustlin.com</p>
+					<p>TEST ACCOUNT: test@maybach.com</p>
 					<p>PASSWORD: test123</p>
 				</div>
 
-				<div className="hustlin-register__form">
+				<div className="maybach-register__form">
 					<form className="form" onSubmit={onSubmit}>
 						<div className="form-input">
 							<input
@@ -62,7 +63,7 @@ const Login = ({ login, isAuthenticated }) => {
 					</form>
 					<p>
 						Not a Hustler?{' '}
-						<Link className="btn" to="/hustlin/register">
+						<Link className="btn" to="/maybach/register">
 							Become one!
 						</Link>
 					</p>

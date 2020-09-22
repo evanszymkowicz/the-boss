@@ -2,12 +2,13 @@ import React, { useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+//	components
 import Loader from '../layout/Loader';
-import Profile from './profile';
-import News from './news';
+import Profile from './Profile';
+import News from './News';
 import { getCurrentProfile } from '../../actions/profile';
 
-const Greetings = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
+const Welcome = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
 	useEffect(
 		() => {
 			getCurrentProfile();
@@ -27,10 +28,8 @@ const Greetings = ({ getCurrentProfile, auth: { user }, profile: { profile, load
 						</Fragment>
 					) : (
 						<Fragment>
-							<p className="no-profile">
-								You haven't created a profile yet, please create one so people can get to know you.
-							</p>
-							<Link to="/hustlin/create-profile" className="btn ml">
+							<p className="no-profile">Please Create a Profile!</p>
+							<Link to="/maybach/create-profile" className="btn ml">
 								Create Profile
 							</Link>
 						</Fragment>
@@ -42,7 +41,7 @@ const Greetings = ({ getCurrentProfile, auth: { user }, profile: { profile, load
 	);
 };
 
-Greetings.propTypes = {
+Welcome.propTypes = {
 	getCurrentProfile: PropTypes.func.isRequired,
 	profile: PropTypes.object.isRequired,
 	auth: PropTypes.object.isRequired
@@ -53,4 +52,4 @@ const mapStateToProps = (state) => ({
 	auth: state.auth
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Greetings);
+export default connect(mapStateToProps, { getCurrentProfile })(Welcome);

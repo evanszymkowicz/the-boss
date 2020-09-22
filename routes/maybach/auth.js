@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+//	authorization
 const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-
+//	database schema
 const User = require('../../models/User');
 
 router.get('/', auth, async (req, res) => {

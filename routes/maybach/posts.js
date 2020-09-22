@@ -30,7 +30,7 @@ router.post('/', auth, [ check('text', 'Text is required').not().isEmpty() ], as
 	}
 });
 
-//	GET hustlin/posts
+//	GET maybach/posts
 //	public
 router.get('/', async (req, res) => {
 	try {
@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
 	}
 });
 
-//	GET hustlin/posts/:id
+//	GET maybach/posts/:id
 //	public
 router.get('/:id', async (req, res) => {
 	try {
@@ -60,7 +60,7 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
-//	PATCH hustlin/posts/:id
+//	PATCH maybach/posts/:id
 //	private
 router.patch('/:id', auth, [ check('text', 'Text is required.').not().isEmpty() ], async (req, res) => {
 	const errors = validationResult(req);
@@ -90,7 +90,7 @@ router.patch('/:id', auth, [ check('text', 'Text is required.').not().isEmpty() 
 	}
 });
 
-//	DELETE hustlin/posts/:id
+//	DELETE maybach/posts/:id
 //	private
 router.delete('/:id', auth, async (req, res) => {
 	try {
@@ -114,7 +114,7 @@ router.delete('/:id', auth, async (req, res) => {
 	}
 });
 
-//	PUT hustlin/posts/like/:id
+//	PUT maybach/posts/like/:id
 //	private
 router.put('/like/:id', auth, async (req, res) => {
 	try {
@@ -133,7 +133,7 @@ router.put('/like/:id', auth, async (req, res) => {
 	}
 });
 
-//	PUT hustlin/posts/unlike/:id
+//	PUT maybach/posts/unlike/:id
 //	private
 router.put('/unlike/:id', auth, async (req, res) => {
 	try {
@@ -153,7 +153,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
 	}
 });
 
-//	POST hustlin/posts/comment/:id
+//	POST maybach/posts/comment/:id
 //	private
 router.post('/comment/:id', auth, [ check('text', 'Text is required.').not().isEmpty() ], async (req, res) => {
 	const errors = validationResult(req);
@@ -180,7 +180,7 @@ router.post('/comment/:id', auth, [ check('text', 'Text is required.').not().isE
 	}
 });
 
-//	PATCH hustlin/posts/comment/:id/:comment_id
+//	PATCH maybach/posts/comment/:id/:comment_id
 //	private
 router.patch(
 	'/comment/:id/:comment_id',

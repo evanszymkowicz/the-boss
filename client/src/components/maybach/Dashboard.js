@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+//	actions
 import { deleteAccount } from '../../actions/profile';
 import { logout } from '../../actions/auth';
 
@@ -11,13 +12,13 @@ const Dashboard = ({ deleteAccount, logout, auth: { user } }) => {
 			<div className="dashboard">
 				<h1 className="dashboard__title">Welcome, {user && user.name}</h1>
 				<nav className="dashboard__nav">
-					<Link to="/hustlin" className="btn">
-						Rick Ross News
+					<Link to="/maybach" className="btn">
+						Mars News
 					</Link>
-					<Link to="/hustlin/users" className="btn">
-						Hustlin
+					<Link to="/maybach/users" className="btn">
+						maybach
 					</Link>
-					<Link to="/hustlin/posts" className="btn">
+					<Link to="/maybach/posts" className="btn">
 						Discussion
 					</Link>
 					<button className="btn " onClick={logout}>

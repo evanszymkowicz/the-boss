@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Sidebar from './products/sidebar';
-import Products from './products/products';
-import Cart from './products/cart';
+import Sidebar from './products/Sidebar';
+import Products from './products/Products';
+import Cart from './products/Cart';
 
 const Shop = ({ cart }) => {
 	const [ cartVisible, setCartVisible ] = useState(false);

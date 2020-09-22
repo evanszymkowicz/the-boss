@@ -18,7 +18,7 @@ export const loadUser = () => async (dispatch) => {
 		setAuthToken(localStorage.token);
 	}
 	try {
-		const res = await axios.get('/hustlin/auth');
+		const res = await axios.get('/maybach/auth');
 		dispatch({
 			type: USER_LOADED,
 			payload: res.data
@@ -41,7 +41,7 @@ export const register = ({ name, email, password }) => async (dispatch) => {
 	const body = JSON.stringify({ name, email, password });
 
 	try {
-		const res = await axios.post('/hustlin/users', body, config);
+		const res = await axios.post('/maybach/users', body, config);
 		dispatch({
 			type: REGISTER_SUCCESS,
 			payload: res.data
@@ -68,7 +68,7 @@ export const login = (email, password) => async (dispatch) => {
 	const body = JSON.stringify({ email, password });
 
 	try {
-		const res = await axios.post('/hustlin/auth', body, config);
+		const res = await axios.post('/maybach/auth', body, config);
 		dispatch({
 			type: LOGIN_SUCCESS,
 			payload: res.data

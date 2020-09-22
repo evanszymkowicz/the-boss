@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+//	custom actions
 import { updateItemCount, removeFromCart, emptyCart } from '../../actions/cart';
 
 const Cart = ({ toggleCartButton, cartVisibility, updateItemCount, removeFromCart, emptyCart, cart }) => {
@@ -42,11 +43,11 @@ const Cart = ({ toggleCartButton, cartVisibility, updateItemCount, removeFromCar
 			const res = await axios.post('/store/checkout', body);
 			const { status } = res.data;
 			if (status === 'success') {
-				alert('Thank you for the purchase!');
+				alert('Thank You for Shopping With Us!');
 				emptyCart();
 				toggleCartButton(false);
 			} else {
-				alert('Sorry, something went wrong.');
+				alert('Sorry, something went wrong. Please try again.');
 			}
 		} catch (error) {
 			console.log(error);
@@ -70,15 +71,11 @@ const Cart = ({ toggleCartButton, cartVisibility, updateItemCount, removeFromCar
 								<div className="cart-qty">
 									<img
 										src="/imgs/minus.svg"
-										alt="remove 1 quantity"
+										alt="remove 1"
 										onClick={() => minusCount(cartItem._id)}
 									/>
 									<p>{cartItem.count}</p>
-									<img
-										src="/imgs/plus.svg"
-										alt="add 1 quantity"
-										onClick={() => addCount(cartItem._id)}
-									/>
+									<img src="/imgs/plus.svg" alt="add 1" onClick={() => addCount(cartItem._id)} />
 								</div>
 								<div>
 									<button
@@ -98,9 +95,9 @@ const Cart = ({ toggleCartButton, cartVisibility, updateItemCount, removeFromCar
 					<p>
 						<strong>${cartTotal(cart)}</strong>
 					</p>
-					<p>Credit card info for testing:</p>
+					<p>Test Number:</p>
 					<p>
-						<strong>4242 4242 4242 4242</strong>
+						<strong>5555 5555 55555 5555</strong>
 					</p>
 					<p>
 						any time in the future such as <strong>09/99</strong>; CVV: <strong>123</strong>{' '}

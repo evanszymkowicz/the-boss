@@ -12,7 +12,7 @@ export default function Sidebar() {
 				<div className="shop-sidebar__item">
 					<h6>Category</h6>
 					<a href="/shop?category=music">Music</a>
-					<a href="/shop?category=merch">Boss Merchandise</a>
+					<a href="/shop?category=apparel">Apparel</a>
 				</div>
 				<div className="shop-sidebar__item">
 					<h6>Price</h6>
@@ -20,7 +20,7 @@ export default function Sidebar() {
 					<a href="/shop?sortBy=price:desc"> high to low</a>
 				</div>
 				<div className="shop-sidebar__item">
-					<h6>Alphabet</h6>
+					<h6>In Order</h6>
 					<a href="/shop?sortBy=name:asc">A to Z</a>
 					<a href="/shop?sortBy=name:desc">Z to A</a>
 				</div>

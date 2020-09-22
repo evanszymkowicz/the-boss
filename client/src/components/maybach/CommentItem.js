@@ -58,7 +58,7 @@ const CommentItem = ({
 
 				<div className="post-item__meta">
 					<p className="post-item__meta-item">
-						<Moment format="YYYY/MM/DD">{date}</Moment>
+						<Moment format="MM/DD/YYYY">{date}</Moment>
 					</p>
 					{!auth.loading &&
 					user === auth.user._id && (

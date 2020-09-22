@@ -1,8 +1,11 @@
 import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+//	layout
 import Loader from '../layout/Loader';
-import SingleProduct from './singleproduct';
+//	components
+import ProductItem from './ProductItem';
+//	actions
 import { getProducts } from '../../actions/products';
 import { addToCart } from '../../actions/cart';
 
@@ -19,7 +22,7 @@ const Products = ({ getProducts, addToCart, product: { products, loading } }) =>
 	) : (
 		<Fragment>
 			<section className="products-grid">
-				{products.map((product) => <SingleProduct key={product._id} product={product} addToCart={addToCart} />)}
+				{products.map((product) => <ProductItem key={product._id} product={product} addToCart={addToCart} />)}
 			</section>
 		</Fragment>
 	);

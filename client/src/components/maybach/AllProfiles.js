@@ -21,7 +21,7 @@ const AllProfiles = ({ getProfiles, profile: { profiles, loading } }) => {
 				<Fragment>
 					<Dashboard />
 					<Fragment>
-						<h2>Stay Hustlin</h2>
+						<h2>Welcome to Maybach Music</h2>
 						{profiles.length > 0 ? (
 							profiles.map((profile) => (
 								<Fragment key={profile._id}>

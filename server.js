@@ -11,10 +11,10 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 //routes
-app.use('/hustlin/auth', require('./routes/hustlin/auth'));
-app.use('/hustlin/users', require('./routes/hustlin/users'));
-app.use('/hustlin/profile', require('./routes/hustlin/profile'));
-app.use('/hustlin/posts', require('./routes/hustlin/posts'));
+app.use('/maybach/auth', require('./routes/maybach/auth'));
+app.use('/maybach/users', require('./routes/maybach/users'));
+app.use('/maybach/profile', require('./routes/maybach/profile'));
+app.use('/maybach/posts', require('./routes/maybach/posts'));
 app.use('/store', require('./routes/product'));
 
 //serve static assets in production

@@ -2,8 +2,9 @@ import React, { useState, Fragment } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+//	layout
 import Alert from '../layout/Alert';
+//	actions
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 
@@ -20,7 +21,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		if (password !== password2) {
-			setAlert('Passwords do not match.', 'danger');
+			setAlert('Passwords do not match.', 'Sorry.');
 		} else {
 			register({ name, email, password });
 		}
@@ -28,14 +29,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
 	//redirect if logged in
 	if (isAuthenticated) {
-		return <Redirect to="/hustlin" />;
+		return <Redirect to="/maybach" />;
 	}
 
 	return (
 		<Fragment>
-			<section className="hustlin-register">
-				<h1 className="hustlin-register__title">Join the hustlin</h1>
-				<div className="hustlin-register__form">
+			<section className="maybach-register">
+				<h1 className="maybach-register__title">Join the maybach</h1>
+				<div className="maybach-register__form">
 					<Alert />
 					<form className="form" onSubmit={onSubmit}>
 						<div className="form-input">
@@ -86,8 +87,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 						<input type="submit" className="btn" value="Yes, I'm in!" />
 					</form>
 					<p>
-						Already in hustlin?{' '}
-						<Link className="btn" to="/hustlin/login">
+						Already a Maybach Memeber?{' '}
+						<Link className="btn" to="/maybach/login">
 							Log in
 						</Link>
 					</p>

@@ -1,28 +1,39 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile } from '../../actions/profile';
 
-const CreateProfile = ({ createProfile, history }) => {
+import { createProfile, getCurrentProfile } from '../../actions/profile';
+
+const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentProfile, history }) => {
+	useEffect(
+		() => {
+			getCurrentProfile();
+		},
+		[ getCurrentProfile ]
+	);
+
 	const [ formData, setFormData ] = useState({
-		name: '',
-		location: '',
-		favoriterossalbum: '',
-		favoriterosssong: ''
+		name: profile.user.name,
+		location: profile.location,
+		favrickrossalbum: profile.favrickrossalbum,
+		favrickrosssong: profile.favrickrosssong
 	});
-	const { name, location, favoriterossalbum, favoriterosssong } = formData;
+
+	const { name, location, favrickrossalbum, favrickrosssong } = formData;
+
 	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+
 	const onSubmit = (e) => {
 		e.preventDefault();
-		createProfile(formData, history);
-		history.push('/hustlin');
+		createProfile(formData, history, true);
+		history.push('/echelon');
 	};
 
 	return (
 		<Fragment>
 			<div className="profile__form">
-				<h1>Create Your Profile</h1>
+				<h1>Edit Your Profile</h1>
 				<form className="form" onSubmit={onSubmit}>
 					<div className="form-input">
 						<input type="text" placeholder="Name" name="name" value={name} onChange={onChange} />
@@ -40,8 +51,8 @@ const CreateProfile = ({ createProfile, history }) => {
 						<input
 							type="text"
 							placeholder="Your fav album"
-							name="favoriterossalbum"
-							value={favoriterossalbum}
+							name="favrickrossalbum"
+							value={favrickrossalbum}
 							onChange={onChange}
 						/>
 					</div>
@@ -49,8 +60,8 @@ const CreateProfile = ({ createProfile, history }) => {
 						<input
 							type="text"
 							placeholder="Your fav song"
-							name="favoriterosssong"
-							value={favoriterosssong}
+							name="favrickrosssong"
+							value={favrickrosssong}
 							onChange={onChange}
 						/>
 					</div>
@@ -62,8 +73,14 @@ const CreateProfile = ({ createProfile, history }) => {
 	);
 };
 
-CreateProfile.propTypes = {
-	createProfile: PropTypes.func.isRequired
+EditProfile.propTypes = {
+	createProfile: PropTypes.func.isRequired,
+	getCurrentProfile: PropTypes.func.isRequired,
+	profile: PropTypes.object.isRequired
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+const mapStateToProps = (state) => ({
+	profile: state.profile
+});
+
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(EditProfile));

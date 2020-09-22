@@ -1,12 +1,15 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+//	layout
 import Loader from '../layout/Loader';
 import Alert from '../layout/Alert';
-import Dashboard from './dashboard';
-import PostItem from '../hustlin/postitem';
-import CommentForm from './commentform';
-import CommentItem from './commentitem';
+//	components
+import Dashboard from './Dashboard';
+import PostItem from './PostItem';
+import CommentForm from './CommentForm';
+import CommentItem from './CommentItem';
+//	actions
 import { getPost } from '../../actions/post';
 
 const Post = ({ getPost, post: { post, loading }, match }) => {
@@ -23,7 +26,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
 		<Fragment>
 			<Dashboard />
 			<div className="posts-grid">
-				<h3 className="mb">You're viewing the comment section of this discussion</h3>
+				<h3 className="mb">You are Viewing the Comment Section of this Post:</h3>
 				<PostItem post={post} showActions={false} />
 				<CommentForm postId={post._id} />
 				<Alert />

@@ -17,7 +17,7 @@ import {
 //  load all posts
 export const getPosts = () => async (dispatch) => {
 	try {
-		const res = await axios.get('/hustlin/posts');
+		const res = await axios.get('/maybach/posts');
 		dispatch({
 			type: GET_POSTS,
 			payload: res.data
@@ -39,7 +39,7 @@ export const addPost = (formData) => async (dispatch) => {
 	};
 
 	try {
-		const res = await axios.post('/hustlin/posts', formData, config);
+		const res = await axios.post('/maybach/posts', formData, config);
 		dispatch({
 			type: ADD_POST,
 			payload: res.data
@@ -56,7 +56,7 @@ export const addPost = (formData) => async (dispatch) => {
 //  get post by id
 export const getPost = (id) => async (dispatch) => {
 	try {
-		const res = await axios.get(`/hustlin/posts/${id}`);
+		const res = await axios.get(`/maybach/posts/${id}`);
 		dispatch({
 			type: GET_POST,
 			payload: res.data
@@ -77,7 +77,7 @@ export const editPost = (id, formData) => async (dispatch) => {
 		}
 	};
 	try {
-		const res = await axios.patch(`/hustlin/posts/${id}`, formData, config);
+		const res = await axios.patch(`/maybach/posts/${id}`, formData, config);
 
 		dispatch({
 			type: EDIT_POST,
@@ -95,7 +95,7 @@ export const editPost = (id, formData) => async (dispatch) => {
 //delete post by id
 export const deletePost = (id) => async (dispatch) => {
 	try {
-		await axios.delete(`/hustlin/posts/${id}`);
+		await axios.delete(`/maybach/posts/${id}`);
 		dispatch({
 			type: DELETE_POST,
 			payload: id
@@ -112,7 +112,7 @@ export const deletePost = (id) => async (dispatch) => {
 //  add like to a post
 export const addLike = (id) => async (dispatch) => {
 	try {
-		const res = await axios.put(`/hustlin/posts/like/${id}`);
+		const res = await axios.put(`/maybach/posts/like/${id}`);
 		dispatch({
 			type: UPDATE_LIKES,
 			payload: { id, likes: res.data }
@@ -128,7 +128,7 @@ export const addLike = (id) => async (dispatch) => {
 //  remove like to a post
 export const removeLike = (id) => async (dispatch) => {
 	try {
-		const res = await axios.put(`/hustlin/posts/unlike/${id}`);
+		const res = await axios.put(`/maybach/posts/unlike/${id}`);
 		dispatch({
 			type: UPDATE_LIKES,
 			payload: { id, likes: res.data }
@@ -144,7 +144,7 @@ export const removeLike = (id) => async (dispatch) => {
 //  get all comments
 export const getComments = (postId) => async (dispatch) => {
 	try {
-		const res = await axios.get(`/hustlin/posts/comment/${postId}`);
+		const res = await axios.get(`/maybach/posts/comment/${postId}`);
 		dispatch({
 			type: GET_COMMENTS,
 			payload: res.data
@@ -165,7 +165,7 @@ export const addComment = (postId, formData) => async (dispatch) => {
 		}
 	};
 	try {
-		const res = await axios.post(`/hustlin/posts/comment/${postId}`, formData, config);
+		const res = await axios.post(`/maybach/posts/comment/${postId}`, formData, config);
 		dispatch({
 			type: ADD_COMMENT,
 			payload: res.data
@@ -187,7 +187,7 @@ export const editComment = (postId, commentId, formData) => async (dispatch) => 
 		}
 	};
 	try {
-		const res = await axios.patch(`/hustlin/posts/comment/${postId}/${commentId}`, formData, config);
+		const res = await axios.patch(`/maybach/posts/comment/${postId}/${commentId}`, formData, config);
 		dispatch({
 			type: EDIT_COMMENT,
 			payload: res.data
@@ -204,7 +204,7 @@ export const editComment = (postId, commentId, formData) => async (dispatch) => 
 //  delete comment
 export const deleteComment = (postId, commentId) => async (dispatch) => {
 	try {
-		await axios.delete(`/hustlin/posts/comment/${postId}/${commentId}`);
+		await axios.delete(`/maybach/posts/comment/${postId}/${commentId}`);
 		dispatch({
 			type: DELETE_COMMENT,
 			payload: commentId
