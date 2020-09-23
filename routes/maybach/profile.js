@@ -77,11 +77,17 @@ router.get('/user/:user_id', async (req, res) => {
 //  private
 router.delete('/me', auth, async (req, res) => {
 	try {
+		//can't remove test account
+		const testAccount = User.findById({ _id: '' });
+		if (testAccount) {
+			return res.json({ msg: 'You can not delete test account.' });
+		}
+		//remove user's posts
 		await Post.deleteMany({ user: req.user.id });
 		//remove profile and user
 		await Profile.findOneAndRemove({ user: req.user.id });
 		await User.findOneAndRemove({ _id: req.user.id });
-		res.json({ msg: 'User Deleted!' });
+		res.json({ msg: 'User deleted.' });
 	} catch (error) {
 		console.error(error.message);
 		res.status(500).send('server error');

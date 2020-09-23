@@ -104,7 +104,8 @@ const Cart = ({ toggleCartButton, cartVisibility, updateItemCount, removeFromCar
 					</p>
 					<div>
 						<StripeCheckout
-							stripeKey=""
+							stripeKey="	
+pk_test_51HRoB8GgkbGr7YgDUvJhn8Z18EEBaD5RLEvJi5V4mmmPPF9DiSZQH0uWA5tiTU8f8ScVcBflmZHsStOj7WIkWFwg002RsGFAwd"
 							token={handleToken}
 							amount={amount}
 							description="Products from the Boss"

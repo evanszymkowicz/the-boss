@@ -55,8 +55,10 @@ export default function News() {
                     <p className="mb">On August 7, 2020, Ross released the single "Pinned to the Cross", featuring Finn Matthews, following his Verzuz battle with 2 Chainz</p>
                     <a href="https://www.youtube.com/watch?v=a35rNEBNiO4&ab_channel=RickRossVEVO" className="btn">Check out the video</a></p>
                 </div>
+
+
                 <div className="news__item news__video">
-                    <iframe title="" width="100%" height="100%" src="https://www.youtube.com/watch?v=a35rNEBNiO4&ab_channel=RickRossVEVO" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <iframe title="Aston Martin Music" width="100%" height="100%" src="https://www.youtube.com/watch?v=a35rNEBNiO4&ab_channel=RickRossVEVO" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 </div>
                 
             </section>
