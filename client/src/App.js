@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Nav from './components/layout/Navbar';
+import Navbar from './components/layout/Navbar';
 import NotFound from './components/layout/NotFound';
 import Home from './components/Home';
 import Story from './components/Story';
@@ -14,7 +14,7 @@ import store from './store';
 import setAuthToken from './utils/setAuthToken';
 import { loadUser } from './actions/auth';
 
-//check if there is any user logged in and get their token
+//check if there is any user logged in, get their token if so
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
 }
@@ -27,7 +27,7 @@ const App = () => {
 	return (
 		<Provider store={store}>
 			<Router>
-				<Nav />
+				<Navbar />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/story" component={Story} />
