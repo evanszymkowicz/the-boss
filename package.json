@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Rick Ross fan site",
   "main": "server.js",
+  "engines": {
+    "node": "12.16.3"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
